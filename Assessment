@@ -1,0 +1,8 @@
+SELECT 
+  c.FirstName, 
+  c.LastName, 
+  AVG(o.BillValue)
+FROM Customer c
+JOIN OrderCustomer o ON c.CustomerID = o.CustomerID
+GROUP BY c.CustomerID, c.FirstName, c.LastName
+ORDER BY c.FirstName ASC;
